@@ -23,7 +23,7 @@ class TestSpider(CrawlSpider):
         # self.log('Saved file %s' % filename)
     def __init__(self, *args, **kwargs):
         super(TestSpider, self).__init__(*args, **kwargs)
-        with open("urllist.txt") as file:
+        with open("output/urllist.txt") as file:
           for line in file:
               line = line.strip() #or someother preprocessing
               self.start_urls.append(line)
