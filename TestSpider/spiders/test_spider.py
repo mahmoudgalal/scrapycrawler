@@ -4,6 +4,7 @@ Written by Mahmoud AbdelFattah
 import scrapy
 import datetime
 import time
+import os
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from TestSpider.items import TestspiderItem
@@ -23,7 +24,7 @@ class TestSpider(CrawlSpider):
         # self.log('Saved file %s' % filename)
     def __init__(self, *args, **kwargs):
         super(TestSpider, self).__init__(*args, **kwargs)
-        with open("output/urllist.txt") as file:
+        with open(os.path.join(os.path.dirname(__file__), 'urllist.txt')) as file:
           for line in file:
               line = line.strip() #or someother preprocessing
               self.start_urls.append(line)
