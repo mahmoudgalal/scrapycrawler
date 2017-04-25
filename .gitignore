@@ -38,6 +38,6 @@ captures/
 
 # Keystore files
 *.jks
-/TestSpider/output/*
+/TestSpider/output/*.html
 /TestSpider/*.pyc
 /TestSpider/spiders/*.pyc
