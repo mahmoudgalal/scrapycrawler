@@ -1,0 +1,2 @@
+ScrapyElasticSearch==0.8.3
+requests_ntlm==0.2.0
