@@ -43,5 +43,9 @@ class TestSpider(CrawlSpider):
         item = TestspiderItem()
         item['url'] = response.url
         item['name'] = response.url
+        paragraphs = ""
+        for listItem in response.xpath('//body//p//text()').extract():
+                 paragraphs += listItem.encode('utf-8')+'\n'
+        item['body'] = paragraphs
         item['description'] = response.body.decode(response.encoding)
         return item

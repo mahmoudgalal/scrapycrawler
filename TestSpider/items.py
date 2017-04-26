@@ -13,5 +13,6 @@ class TestspiderItem(scrapy.Item):
     # name = scrapy.Field()
     name = scrapy.Field()
     description = scrapy.Field()
+    body = scrapy.Field()
     url = scrapy.Field()
     pass
