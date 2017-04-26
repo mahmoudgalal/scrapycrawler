@@ -15,9 +15,9 @@ class TestSpider(CrawlSpider):
     #put here all the urls for data sources
     start_urls = ['http://www.foodnavigator.com',
            'http://foodnewsinternational.com',
-           'http://www.lamberti.com',
-           'https://www.cpkelco.com',
-           'http://www.fmc.com']
+           'http://www.lamberti.com/news/news_events.cfm',
+           'https://www.cpkelco.com/news/',
+           'http://phx.corporate-ir.net/phoenix.zhtml?c=117919&p=irol-news']
     #start_urls = []
     rules = ( Rule(LinkExtractor(), callback='parse_item' ),)
     # def parse_item(self,response):
