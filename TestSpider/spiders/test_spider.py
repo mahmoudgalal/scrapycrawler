@@ -49,6 +49,6 @@ class TestSpider(CrawlSpider):
                  paragraphs += unicode(listItem+'\n')
         item['body'] = paragraphs
         item['description'] = response.body.decode(response.encoding)
-        item['iscorporate'] = true
+        item['iscorporate'] = True
         item['likes'] = 0
         return item
