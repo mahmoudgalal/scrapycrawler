@@ -50,5 +50,7 @@ class TestSpider(CrawlSpider):
         for listItem in response.xpath('//body//p//text()').extract():
                  paragraphs += unicode(listItem+'\n')
         item['body'] = paragraphs
+        item['likes'] = 0
+        item['iscorporate'] = False
         item['description'] = response.body.decode(response.encoding)
         return item
