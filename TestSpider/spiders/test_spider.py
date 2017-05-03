@@ -12,10 +12,8 @@ from scrapy.linkextractors import LinkExtractor
 from TestSpider.items import TestspiderItem
 class TestSpider(CrawlSpider):
     name = 'pages'
-    #put here all the urls for data sources
-    start_urls = ['http://www.foodnavigator.com',
-           'http://foodnewsinternational.com',
-           'http://www.lamberti.com/news/news_events.cfm',
+    #put here all the corporate urls for data sources
+    start_urls = ['http://www.lamberti.com/news/news_events.cfm',
            'https://www.cpkelco.com/news/',
            'http://phx.corporate-ir.net/phoenix.zhtml?c=117919&p=irol-news']
     #start_urls = []
@@ -51,4 +49,6 @@ class TestSpider(CrawlSpider):
                  paragraphs += unicode(listItem+'\n')
         item['body'] = paragraphs
         item['description'] = response.body.decode(response.encoding)
+        item['iscorporate'] = true
+        item['likes'] = 0
         return item

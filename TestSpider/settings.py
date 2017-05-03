@@ -93,7 +93,7 @@ ITEM_PIPELINES = {
     'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 100
 }
 
-ELASTICSEARCH_SERVERS = ['http://ec2-52-59-29-110.eu-central-1.compute.amazonaws.com:9200']
+ELASTICSEARCH_SERVERS = ['http://localhost:9200']
 ELASTICSEARCH_INDEX = 'scrapy'
-ELASTICSEARCH_TYPE = 'data'
+ELASTICSEARCH_TYPE = 'corporate'
 ELASTICSEARCH_UNIQ_KEY = 'url'
