@@ -14,14 +14,8 @@ class TestSpider(CrawlSpider):
     name = 'pages'
     #put here all the urls for data sources
     start_urls = ['http://www.foodnavigator.com',
-           'http://foodnewsinternational.com',
-           'https://en.wikipedia.org/wiki/Guar',
-           'https://en.wikipedia.org/wiki/Xanthan_gum',
-           'https://en.wikipedia.org/wiki/Caesalpinia_spinosa',
-           'https://en.wikipedia.org/wiki/Carrageenan',
-           'https://en.wikipedia.org/wiki/Cellulose',
-           'https://en.wikipedia.org/wiki/Alginic_acid',
-           'https://en.wikipedia.org/wiki/Tamarind']
+           'http://foodnewsinternational.com']
+
     #start_urls = []
     rules = ( Rule(LinkExtractor(), callback='parse_item' ),)
     # def parse_item(self,response):
