@@ -14,7 +14,9 @@ class TestspiderItem(scrapy.Item):
     name = scrapy.Field()
     description = scrapy.Field()
     body = scrapy.Field()
-    url = scrapy.Field()
-    iscorporate = scrapy.Field()
+    url = scrapy.Field()    
     likes = scrapy.Field()
+    ratings = scrapy.Field()
+    ratingval = scrapy.Field()
+    commentscount = scrapy.Field()
     pass
