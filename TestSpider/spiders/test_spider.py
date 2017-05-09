@@ -10,6 +10,7 @@ import pkgutil
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from TestSpider.items import TestspiderItem
+from TestSpider.rating import TestspiderRatingItem
 class TestSpider(CrawlSpider):
     name = 'pages'
     #put here all the urls for data sources
@@ -40,7 +41,15 @@ class TestSpider(CrawlSpider):
         filename = 'output/page-%s.html' % page
         #Exclude caching visited pages for now
         #with open(filename, 'wb') as f:
-        #      f.write(response.body)        
+        #      f.write(response.body) 
+        ratingItem = TestspiderRatingItem()
+        ratingItem['ratingval'] = 0.0
+        ratingItem['onestarcount'] = 0
+        ratingItem['twostarcount'] = 0
+        ratingItem['threestarcount'] = 0
+        ratingItem['fourstarcount'] = 0
+        ratingItem['fivestarcount'] = 0
+
         item = TestspiderItem()
         item['url'] = response.url
         item['name'] = response.url
@@ -49,7 +58,7 @@ class TestSpider(CrawlSpider):
                  paragraphs += unicode(listItem+'\n')
         item['body'] = paragraphs
         item['likes'] = 0
-        #item['ratings'] = 0
+        item['ratings']= dict(ratingItem)
         #item['ratingval'] = 0
         item['commentscount'] = 0
         item['description'] = response.body.decode(response.encoding)
